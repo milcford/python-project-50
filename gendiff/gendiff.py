@@ -1,6 +1,6 @@
 import argparse
 import json
-from gendiff.generate_diff import generate_diff
+import generate_diff
 
 parser = argparse.ArgumentParser()
 
@@ -27,5 +27,5 @@ with open(second_file) as file:
     data = file.read()
 file2 = json.loads(data)
 
-diff = generate_diff(file1, file2)
+diff = generate_diff.generate_diff(file1, file2)
 print(diff)
