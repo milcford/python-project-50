@@ -1,4 +1,3 @@
-import json
 
 def generate_diff(file1, file2):
     # Будем собирать результат в список, потом соединим его с помощью '\n'.join(result)
@@ -63,13 +62,13 @@ def generate_diff(file1, file2):
     # return string_result
     # Надо за результат взять строку и формировать ее, что бы функция возвращала эту строку !!!
 
-with open('file1.json') as file:
-    data = file.read()
-file1 = json.loads(data)
-
-with open('file2.json') as file:
-    data = file.read()
-file2 = json.loads(data)
+# with open('file1.json') as file:
+#     data = file.read()
+# file1 = json.loads(data)
+#
+# with open('file2.json') as file:
+#     data = file.read()
+# file2 = json.loads(data)
 
 # file1 = json.load(open(file='file1.json'))
 # # print(f'Первый файл выглядит так - {file1}')
@@ -77,4 +76,4 @@ file2 = json.loads(data)
 # # print(f'Второй файл выглядит так - {file2}')
 # print()
 
-print(generate_diff(file1, file2))
+# print(generate_diff(file1, file2))
