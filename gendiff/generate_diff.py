@@ -1,4 +1,4 @@
-
+import json
 def generate_diff(file1, file2):
     # Будем собирать результат в список, потом соединим его с помощью '\n'.join(result)
     result = []
@@ -62,11 +62,11 @@ def generate_diff(file1, file2):
     # return string_result
     # Надо за результат взять строку и формировать ее, что бы функция возвращала эту строку !!!
 
-# with open('file1.json') as file:
+# with open('/Users/milcford/hexlet/python-project-50/gendiff/tests/fixtures/file1.json') as file:
 #     data = file.read()
 # file1 = json.loads(data)
 #
-# with open('file2.json') as file:
+# with open('/Users/milcford/hexlet/python-project-50/gendiff/tests/fixtures/file2.json') as file:
 #     data = file.read()
 # file2 = json.loads(data)
 
