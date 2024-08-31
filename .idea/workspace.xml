@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de5d6ee4-37a8-49f9-8eb1-d725138f985d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/gendiff/scripts/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gendiff/tests/fixtures/result_string.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gendiff/tests/test_generate_diff.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/setup.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gendiff/file1.json" beforeDir="false" afterPath="$PROJECT_DIR$/gendiff/tests/fixtures/file1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gendiff/file2.json" beforeDir="false" afterPath="$PROJECT_DIR$/gendiff/tests/fixtures/file2.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gendiff/gendiff.py" beforeDir="false" afterPath="$PROJECT_DIR$/gendiff/scripts/gendiff.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gendiff/generate_diff.py" beforeDir="false" afterPath="$PROJECT_DIR$/gendiff/generate_diff.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-    </list>
+    <list default="true" id="de5d6ee4-37a8-49f9-8eb1-d725138f985d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
