@@ -9,7 +9,7 @@ file1 = json.loads(data)
 with open('gendiff/tests/fixtures/file2.json') as file:
     data = file.read()
 file2 = json.loads(data)
+
+
 def test_generate_diff():
     assert generate_diff(file1, file2) == result_string
-
-
