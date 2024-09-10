@@ -1,7 +1,6 @@
+from parcer_file_extension import generate_dict
 
-def generate_diff(file1, file2):
-    pass
-
+def generate_diff2(file1, file2):
     result = []
     for i in file1:
         if i in file2:
@@ -21,13 +20,17 @@ def generate_diff(file1, file2):
     result_text = '\n'.join(sorted_result)
     return '{' + '\n' + result_text + '\n' + '}'
 
+with open('/Users/milcford/hexlet/python-project-50/gendiff/tests/fixtures/file1.yaml') as file:
+    data = file.read()
+file1 = data
 
-# with open('/Users/milcford/hexlet/python-project-50/gendiff/tests/fixtures/file1.json') as file:
-#     data = file.read()
-# file1 = json.loads(data)
-#
-# with open('/Users/milcford/hexlet/python-project-50/gendiff/tests/fixtures/file2.json') as file:
-#     data = file.read()
-# file2 = json.loads(data)
-#
-# print(generate_diff(file1, file2))
+with open('/Users/milcford/hexlet/python-project-50/gendiff/tests/fixtures/file2.yaml') as file:
+    data = file.read()
+file2 = data
+
+file1 = generate_dict(file1)
+file2 = generate_dict(file2)
+
+
+print(generate_diff2(file1, file2))
+
