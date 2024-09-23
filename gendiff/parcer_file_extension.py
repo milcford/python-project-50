@@ -34,5 +34,6 @@ def parse_file(path):
             # Возвращаем ошибку
             raise NameError(f'file extension {file_extension} not supported')
 
-# file = '/Users/milcford/hexlet/python-project-50/gendiff/tests/fixtures/file1.yaml'
-# print(parse_file(file))
+
+# path = '/Users/milcford/hexlet/python-project-50/gendiff/tests/fixtures/file1.json'
+# print(parse_file(path))
