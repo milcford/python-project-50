@@ -1,10 +1,11 @@
 from parcer_file_extension import parse_file
-from generate_interior_space import generate_interior_space
+from diff import diff
 
 def stylish(dict1, dict2, interior_space, depth=1):
     result = []
     indent = depth * '....'
     total_keys = dict1.keys() | dict2.keys()  # Объединяем ключи обоих словарей
+    # Где то тут наверно надо отсорировать ключи
 
     for key in total_keys:
         if key in dict1 and key not in interior_space:
@@ -36,6 +37,6 @@ dict1 = parse_file(path1)
 dict2 = parse_file(path2)
 
 
-interior_space = generate_interior_space(dict1, dict2)
+interior_space = diff(dict1, dict2)
 
 print(stylish(dict1, dict2, interior_space))

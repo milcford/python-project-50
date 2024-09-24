@@ -1,7 +1,7 @@
 from parcer_file_extension import parse_file
 
 
-def generate_interior_space(dict1, dict2):
+def diff(dict1, dict2):
     result = {}
 
     for key in dict1:
@@ -11,7 +11,7 @@ def generate_interior_space(dict1, dict2):
             if dict1[key] == dict2[key]:
                 result[key] = 'without_changes'
             elif isinstance(dict1[key], dict) and isinstance(dict2[key], dict):
-                nested_changes = generate_interior_space(dict1[key], dict2[key])
+                nested_changes = diff(dict1[key], dict2[key])
                 result.update(nested_changes)
             else:
                 result[key] = 'changed'
