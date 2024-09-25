@@ -1,14 +1,15 @@
-from parcer_file_extension import parse_file
 from diff import diff
 
-def stylish(dict1, dict2, interior_space, depth=1):
+def stylish(diff, depth=1):
     result = []
     indent = depth * '....'
-    total_keys = dict1.keys() | dict2.keys()  # Объединяем ключи обоих словарей
-    # Где то тут наверно надо отсорировать ключи
+    total_keys = dict1 | dict2  # Объединяем ключи обоих словарей
+    sorted_keys = sorted(total_keys)
 
-    for key in total_keys:
-        if key in dict1 and key not in interior_space:
+    # Проходим по всем ключам
+    for key in sorted_keys:
+        # Если ключ есть
+        if key in diff and key not in interior_space:
             # Если ключ есть только в dict1 и не отмечен в interior_space
             result.append(f'{indent}{key}: {dict1[key]}')
 
@@ -30,13 +31,10 @@ def stylish(dict1, dict2, interior_space, depth=1):
     for i in result:
         print(i)
 
-path1 = '/Users/milcford/hexlet/python-project-50/gendiff/tests/fixtures/file1.json'
-path2 = '/Users/milcford/hexlet/python-project-50/gendiff/tests/fixtures/file2.json'
-
-dict1 = parse_file(path1)
-dict2 = parse_file(path2)
+dict1 = '/Users/milcford/hexlet/python-project-50/gendiff/tests/fixtures/file1.json'
+dict2 = '/Users/milcford/hexlet/python-project-50/gendiff/tests/fixtures/file2.json'
 
 
-interior_space = diff(dict1, dict2)
+diff = diff(dict1, dict2)
 
-print(stylish(dict1, dict2, interior_space))
+print(stylish(diff))
