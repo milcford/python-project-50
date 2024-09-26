@@ -19,7 +19,10 @@ def diff(dict1, dict2):
             elif isinstance(dict1[key], dict) and isinstance(dict2[key], dict):
                 nested_changes = diff(dict1[key], dict2[key])
                 if nested_changes:
-                    result[key] = nested_changes
+                    result[key] = {
+                        'status': 'changed',
+                        'nested_changes': nested_changes
+                    }
                 else:
                     result[key] = {
                         'status': 'without_changes',
