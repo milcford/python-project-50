@@ -1,40 +1,40 @@
 from diff import diff
+from parcer_file_extension import parse_file
 
+# ХЗ нужна тут эта сортировка или нет
+# total_keys = dict1 | dict2  # Объединяем ключи обоих словарей
+# sorted_keys = sorted(total_keys)
 def stylish(diff, depth=1):
     result = []
     indent = depth * '....'
-    total_keys = dict1 | dict2  # Объединяем ключи обоих словарей
-    sorted_keys = sorted(total_keys)
 
     # Проходим по всем ключам
-    for key in sorted_keys:
-        # Если ключ есть
-        if key in diff and key not in interior_space:
-            # Если ключ есть только в dict1 и не отмечен в interior_space
-            result.append(f'{indent}{key}: {dict1[key]}')
+    for key in diff:
+        # Нужно каким-то образом проверять статус ключа в нашем diff слоавре
 
-        if key in interior_space:
-            if interior_space[key] == 'deleted':
-                result.append(f'{indent[2:]}- {key}: {dict1[key]}')
-            elif interior_space[key] == 'changed':
-                result.append(f'{indent[2:]}- {key}: {dict1[key]}')
-                result.append(f'{indent[2:]}+ {key}: {dict2[key]}')
-            elif interior_space[key] == 'added':
-                result.append(f'{indent[2:]}+ {key}: {dict2[key]}')
+        # Если ключ со статусом nested - этот момент наверно надо обрабатывать в конце
+        # так как ХЗ почему что бы в рекурсию вызывать в нем с самом конце
+        if diff[key]['status'] == 'nested':
+            # Добавляем только сам ключ двоеточие и отрытую фигурную скобку: common: {
+            result.append(f'{indent}{key}: {{')
 
-        # Проверка вложенных словарей
-        if isinstance(dict1.get(key), dict) and isinstance(dict2.get(key), dict):
-            nested_result = stylish(dict1[key], dict2[key], interior_space, depth + 1)
-            if nested_result:  # Проверяем, что nested_result не пуст
-                result.extend(nested_result)
+        elif diff[key]['status'] == 'without_changed':
+            result.append(f'{indent}{key}: {{')
+        elif diff[key]['status'] == 'deleted':
+            result.append(f'{indent[:-2]}- {key}: {{')
+        elif diff[key]['status'] == 'added':
+            result.append(f'{indent[:-2]}+ {key}: {{')
+        elif diff[key]['status'] == 'changed':
+            result.append(f'{indent[:-2]}- {key}: {{')
+            result.append(f'{indent[:-2]}+ {key}: {{')
 
-    for i in result:
-        print(i)
+    print(result)
 
-dict1 = '/Users/milcford/hexlet/python-project-50/gendiff/tests/fixtures/file1.json'
-dict2 = '/Users/milcford/hexlet/python-project-50/gendiff/tests/fixtures/file2.json'
+
+dict1 = parse_file('/Users/milcford/hexlet/python-project-50/gendiff/tests/fixtures/file1.json')
+dict2 = parse_file('/Users/milcford/hexlet/python-project-50/gendiff/tests/fixtures/file2.json')
 
 
 diff = diff(dict1, dict2)
 
-print(stylish(diff))
+stylish(diff)
