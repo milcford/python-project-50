@@ -41,8 +41,8 @@ def diff(dict1, dict2):
                 'status': 'added',
                 'value': dict2[key]
             }
-
-    return result
+    sorted_result = dict(sorted(result.items()))
+    return sorted_result
 
 path1 = '/Users/milcford/hexlet/python-project-50/gendiff/tests/fixtures/file1.json'
 path2 = '/Users/milcford/hexlet/python-project-50/gendiff/tests/fixtures/file2.json'
