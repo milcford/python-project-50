@@ -47,6 +47,10 @@ def diff(dict1, dict2):
 path1 = '/Users/milcford/hexlet/python-project-50/gendiff/tests/fixtures/file1.json'
 path2 = '/Users/milcford/hexlet/python-project-50/gendiff/tests/fixtures/file2.json'
 # Получаем наши готовые словари для сравнения с помощью функции parse_file
-# p1 = parse_file(path1)
-# p2 = parse_file(path2)
-# print(diff(p1, p2))
+p1 = parse_file(path1)
+p2 = parse_file(path2)
+print(diff(p1, p2))
+
+# Здесь надо учитывать удаленные и добавленные ключи у которых значение также считается словарем,
+# так как при формировании строки их значение добавляется в одну строку, а должен быть перенос ключа
+# и значения.
